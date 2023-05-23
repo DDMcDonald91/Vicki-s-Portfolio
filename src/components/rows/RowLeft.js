@@ -4,7 +4,7 @@ import './rows.css'
 
 export default function RowLeft(props) {
   return (
-    <Container fluid>
+    <Container fluid id="about">
         <Row fluid className='section-row'>
             <Col xs={12} md={8} align='left'>
               <Container className='row-text-container row-text-left-container'>

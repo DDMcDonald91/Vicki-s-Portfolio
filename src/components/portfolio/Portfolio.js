@@ -14,7 +14,7 @@ export default function Portfolio() {
     }
 
   return (
-    <Container align='center' className='p-0'>
+    <Container align='center' className='p-0' id="portfolio">
         <Container className='portfolio-text-container'>
             <h2 className='section-heading'>Projects</h2>
             <p>Explore my portfolio site to view a collection of my engaging instructional design projects. Discover the innovative and learner-centered solutions I have crafted to enhance the learning experience and achieve impactful outcomes.</p>

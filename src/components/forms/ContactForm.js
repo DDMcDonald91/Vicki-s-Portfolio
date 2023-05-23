@@ -1,23 +1,39 @@
 import { useRef, useState } from 'react'
 import { Container, Form, Button, Spinner } from 'react-bootstrap'
+import emailjs from '@emailjs/browser';
 import '../global.css'
 
 export default function ContactForm() {
     const form = useRef()
     const [loading, setLoading] = useState(false)
 
-    const sendEmail = async (e) => {
-        e.preventDefault()
+    const serviceKey = process.env.REACT_APP_EMAILJS_SERVICE_KEY
+    const publicKey = process.env.REACT_APP_EMAILJS_PUBLIC_KEY
+
+    // Function for sending email form
+    const sendEmail = (e) => {
+        e.preventDefault();
 
         setLoading(true)
+    
+        emailjs.sendForm(serviceKey, 'template_hhiytug', form.current, publicKey)
+          .then((result) => {
+              console.log(result.text);
+              alert('Thank you for contacting us. We will be in touch soon!')
+              return
+          }, (error) => {
+              console.log(error.text);
+              alert('There seems to be an error. Please refresh the page and try again.')
+              return
+          });
 
-        // email contact function
-
+        form.current.reset();
+ 
         setLoading(false)
-    }
+      };
 
   return (
-    <Container style={{maxWidth: '30rem'}}>
+    <Container style={{maxWidth: '30rem'}} id="contact">
         <Container align='center'>
         <h1 className='section-heading'>Contact Me</h1>
         <p>Want to reach out to me? <br /> Fill out the form below!</p>
@@ -34,10 +50,6 @@ export default function ContactForm() {
             <Form.Text className="text-muted">
             I'll never share your email with anyone else.
             </Form.Text>
-            </Form.Group>
-
-            <Form.Group>
-                <Form.Control value="Contact/Inquiry" type="text" name="subject" hidden />
             </Form.Group>
 
             <Form.Group className="mb-3" controlId="formBasicMessage">
