@@ -1,0 +1,18 @@
+#project-slider {
+    height: 35rem;
+    max-width: 45rem;
+    border-radius: .5rem;
+    box-shadow: 10px 5px 5px black;
+    margin: 1.5rem 0;
+}
+
+.project-slide .project-image {
+    height: 35rem;
+    max-width: 45rem;
+    border-radius: .5rem;
+
+}
+
+.portfolio-text-container {
+    width: 70%;
+}

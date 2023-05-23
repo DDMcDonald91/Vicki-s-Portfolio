@@ -1,0 +1,12 @@
+#footer {
+    padding-left: 0;
+    padding-right: 0;
+    margin-top: 5rem;
+    background-image: linear-gradient(white, black, black, black);
+    color: white;
+    height: 5rem;
+}
+
+.footer-item {
+    margin-top: 1.5rem;
+}

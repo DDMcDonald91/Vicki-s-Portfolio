@@ -1,0 +1,10 @@
+#navigation-bar {
+    margin-bottom: 2.5rem;
+    height: 6rem;
+    background-image: linear-gradient(black, black, black, white);
+}
+
+#logo {
+    height: 75px;
+    width: 75px;
+}
