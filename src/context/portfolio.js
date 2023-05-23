@@ -1,4 +1,4 @@
-import { useContext, createContext, useState, useEffect } from "react";
+import { useContext, createContext, useState } from "react";
 
 
 const PortfolioContext = createContext(null)
@@ -21,7 +21,7 @@ export function PortfolioContextProvider({ children }) {
         'project_id': '1'
         },
     ]
-    const [loading, setLoading] = useState(false)
+    //const [loading, setLoading] = useState(false)
 
     // Fake Data End
 
@@ -134,7 +134,6 @@ export function PortfolioContextProvider({ children }) {
             //updateUserPassword,
             //resetUserPassword,
             data,
-            loading,
             }
         }>{children}</PortfolioContext.Provider>
     )
